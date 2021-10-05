@@ -1,0 +1,37 @@
+<p>capa works!</p>
+<h1 class="title">Bienvenido {{ nombre }}</h1>
+<div class="form-group m-4">
+  <input
+    type="text"
+    class="form-control w-25"
+    [(ngModel)]="nombreEstudiante"
+    placeholder="Ingrese nombre"
+  />
+  <input
+    type="text"
+    class="form-control w-25"
+    [(ngModel)]="correo"
+    placeholder="Ingrese correo"
+  />
+  <input
+    type="text"
+    class="form-control w-25"
+    [(ngModel)]="telefono"
+    placeholder="Ingrese telefono"
+  />
+  <select [(ngModel)]="opcionSeleccionado" (change)="capturar()">
+    <option value="0" autofocus >Selecciona una opción</option>
+    <option *ngFor="let dato of datos">
+      {{ dato }}
+    </option>
+  </select>
+</div>
+
+<button (click)="mostrar()" class="m-2 btn btn-danger">Cambiar</button>
+
+<div class="m-4 border border-dark">
+  <p class="m-2">{{ nombreEstudiante }}</p>
+  <p class="m-2">{{ correo }}</p>
+  <p class="m-2">{{ telefono }}</p>
+  <p class="m-2">{{ verSeleccion }}</p>
+</div>
